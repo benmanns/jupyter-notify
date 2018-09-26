@@ -15,16 +15,16 @@ with open('LICENSE.txt') as l:
     license = l.read()
 
 setup(
-    name='jupyternotify',
-    version='0.1.15',
+    name='jupyterbgnotify',
+    version='0.2.0',
     description='A Jupyter Notebook %%magic for Browser Notifications of Cell Completion',
     long_description=readme+'\n\n'+authors+'\nLicense\n-------\n'+license,
-    author='Michelangelo D\'Agostino',
-    author_email='mdagostino@shoprunner.com',
-    url='https://github.com/shoprunner/jupyter-notify',
+    author='Benjamin Manns',
+    author_email='benmanns@gmail.com',
+    url='https://github.com/benmanns/jupyterbgnotify',
     license='BSD-3-Clause',
     packages=find_packages(exclude=('tests', 'docs')),
-    package_data={'jupyternotify': ['js/*.js']},
+    package_data={'jupyterbgnotify': ['js/*.js']},
     install_requires=[
         'ipython',
         'jupyter'

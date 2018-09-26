@@ -1,11 +1,11 @@
-[![pypiv](https://img.shields.io/pypi/v/jupyternotify.svg)](https://pypi.python.org/pypi/jupyternotify)
-[![pyv](https://img.shields.io/pypi/pyversions/jupyternotify.svg)](https://pypi.python.org/pypi/jupyternotify)
-[![License](https://img.shields.io/pypi/l/jupyternotify.svg)](https://github.com/ShopRunner/jupyter-notify/blob/master/LICENSE.txt)
+[![pypiv](https://img.shields.io/pypi/v/jupyterbgnotify.svg)](https://pypi.python.org/pypi/jupyterbgnotify)
+[![pyv](https://img.shields.io/pypi/pyversions/jupyterbgnotify.svg)](https://pypi.python.org/pypi/jupyterbgnotify)
+[![License](https://img.shields.io/pypi/l/jupyterbgnotify.svg)](https://github.com/benmanns/jupyterbgnotify/blob/master/LICENSE.txt)
 [![Thanks](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/mdagost)
 
-<img src="https://s3.amazonaws.com/shoprunner-github-logo/shoprunner-logo.svg" alt="ShopRunner logo" width="300"/>
-
 # A Jupyter Magic For Browser Notifications of Cell Completion
+
+Note: This is a light modification of the [ShopRunner/jupyter-notify](https://github.com/ShopRunner/jupyter-notify) plugin with an emphasis on only notifying if your Jupyter tab is in the background. This makes it easier to leave jupyterbgnotify always on.
 
 <img src="https://s3.amazonaws.com/shoprunner-github-logo/jupyter_chrome.png" alt="Jupyter notebook notification in Chrome" width="750"/>
 <img src="https://s3.amazonaws.com/shoprunner-github-logo/jupyter_firefox.png" alt="Jupyter notebook notification in Firefox" width="750"/>
@@ -23,7 +23,7 @@ The extension has currently been tested in Chrome (Version:  58.0.3029) and Fire
 To use the package, install it via pip directly:
 
 ```
-pip install jupyternotify
+pip install jupyterbgnotify
 ```
 
 or add it to the requirements.txt of your repo.
@@ -31,8 +31,8 @@ or add it to the requirements.txt of your repo.
 To install directly from source:
 
 ``` bash
-git clone git@github.com:ShopRunner/jupyter-notify.git
-cd jupyter-notify/
+git clone git@github.com:benmanns/jupyterbgnotify.git
+cd jupyterbgnotify/
 virtualenv venv
 source venv/bin/activate
 pip install -r requirements.txt
@@ -42,14 +42,14 @@ jupyter notebook
 ## Usage
 ### Load inside a Jupyter notebook:
 ``` python
-%load_ext jupyternotify
+%load_ext jupyterbgnotify
 ```
 
 ### Automatically load in all notebooks
 Add the following lines to your ipython startup file:
 ```
 c.InteractiveShellApp.extensions = [
-    'jupyternotify'
+    'jupyterbgnotify'
 ]
 ```
 The .ipython startup file can be generated with `ipython profile create [profilename]` and will create a configuration file at `~/.ipython/profile_[profilename]/ipython_config.py'`. Leaving [profilename] blank will create a default profile (see [this](http://ipython.org/ipython-doc/dev/config/intro.html) for more info).
@@ -69,9 +69,9 @@ NOTE: Currently options cannot be used with `%load_ext` or the ipython startup f
 To load the magic with options, you should load it manually by doing the following:
 
 ```python
-import jupyternotify
+import jupyterbgnotify
 ip = get_ipython()
-ip.register_magics(jupyternotify.JupyterNotifyMagics(
+ip.register_magics(jupyterbgnotify.JupyterNotifyMagics(
     ip,
     option_name="option_value"
 ))
@@ -81,9 +81,9 @@ or add this to your ipython startup file:
 
 ```python
 c.InteractiveShellApp.exec_lines = [
-    'import jupyternotify',
+    'import jupyterbgnotify',
     'ip = get_ipython()',
-    'ip.register_magics(jupyternotify.JupyterNotifyMagics(ip, option_name="option_value"))'
+    'ip.register_magics(jupyterbgnotify.JupyterNotifyMagics(ip, option_name="option_value"))'
 ]
 ```
 

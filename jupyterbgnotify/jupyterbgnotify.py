@@ -22,7 +22,7 @@ class JupyterNotifyMagics(Magics):
 
     def __init__(self, shell, require_interaction=False):
         super(JupyterNotifyMagics, self).__init__(shell)
-        with open(resource_filename("jupyternotify", "js/init.js")) as jsFile:
+        with open(resource_filename("jupyterbgnotify", "js/init.js")) as jsFile:
             jsString = jsFile.read()
         display(Javascript(jsString))
         self.options = {
@@ -91,7 +91,7 @@ class JupyterNotifyMagics(Magics):
             notification_uuid = uuid.uuid4()
 
         # display our browser notification using javascript
-        with open(resource_filename("jupyternotify", "js/notify.js")) as jsFile:
+        with open(resource_filename("jupyterbgnotify", "js/notify.js")) as jsFile:
             jsString = jsFile.read()
         display(Javascript(jsString % {
             "notification_uuid": notification_uuid,

@@ -1,4 +1,4 @@
-from .jupyternotify import JupyterNotifyMagics
+from .jupyterbgnotify import JupyterNotifyMagics
 
 
 def load_ipython_extension(ipython):

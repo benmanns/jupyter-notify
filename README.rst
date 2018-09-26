@@ -31,7 +31,7 @@ To use the package, install it via pip directly:
 
 ::
 
-    pip install jupyternotify
+    pip install jupyterbgnotify
 
 or add it to the requirements.txt of your repo.
 
@@ -39,8 +39,8 @@ To install directly from source:
 
 .. code:: bash
 
-    git clone git@github.com:ShopRunner/jupyter-notify.git
-    cd jupyter-notify/
+    git clone git@github.com:benmanns/jupyterbgnotify.git
+    cd jupyterbgnotify/
     virtualenv venv
     source venv/bin/activate
     pip install -r requirements.txt
@@ -54,7 +54,7 @@ Load inside a Jupyter notebook:
 
 .. code:: python
 
-    %load_ext jupyternotify
+    %load_ext jupyterbgnotify
 
 Automatically load in all notebooks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -64,7 +64,7 @@ Add the following lines to your ipython startup file:
 ::
 
     c.InteractiveShellApp.extensions = [
-        'jupyternotify'
+        'jupyterbgnotify'
     ]
 
 The .ipython startup file can be generated with
@@ -93,9 +93,9 @@ following:
 
 .. code:: python
 
-    import jupyternotify
+    import jupyterbgnotify
     ip = get_ipython()
-    ip.register_magics(jupyternotify.JupyterNotifyMagics(
+    ip.register_magics(jupyterbgnotify.JupyterNotifyMagics(
         ip,
         option_name="option_value"
     ))
@@ -105,9 +105,9 @@ or add this to your ipython startup file:
 .. code:: python
 
     c.InteractiveShellApp.exec_lines = [
-        'import jupyternotify',
+        'import jupyterbgnotify',
         'ip = get_ipython()',
-        'ip.register_magics(jupyternotify.JupyterNotifyMagics(ip, option_name="option_value"))'
+        'ip.register_magics(jupyterbgnotify.JupyterNotifyMagics(ip, option_name="option_value"))'
     ]
 
 The following options exist: - ``require_interaction`` - Boolean,
@@ -185,11 +185,11 @@ message using ``--output`` or ``-o``.
 
 Notification message: The answer is 42.
 
-.. |pypiv| image:: https://img.shields.io/pypi/v/jupyternotify.svg
-   :target: https://pypi.python.org/pypi/jupyternotify
-.. |pyv| image:: https://img.shields.io/pypi/pyversions/jupyternotify.svg
-   :target: https://pypi.python.org/pypi/jupyternotify
-.. |License| image:: https://img.shields.io/pypi/l/jupyternotify.svg
-   :target: https://github.com/ShopRunner/jupyter-notify/blob/master/LICENSE.txt
+.. |pypiv| image:: https://img.shields.io/pypi/v/jupyterbgnotify.svg
+   :target: https://pypi.python.org/pypi/jupyterbgnotify
+.. |pyv| image:: https://img.shields.io/pypi/pyversions/jupyterbgnotify.svg
+   :target: https://pypi.python.org/pypi/jupyterbgnotify
+.. |License| image:: https://img.shields.io/pypi/l/jupyterbgnotify.svg
+   :target: https://github.com/benmanns/jupyterbgnotify/blob/master/LICENSE.txt
 .. |Thanks| image:: https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg
    :target: https://saythanks.io/to/mdagost
